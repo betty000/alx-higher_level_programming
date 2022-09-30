@@ -1,0 +1,2 @@
+# 0x04. Python - More Data Structures: Set, Dictionary
+In Python, there is primarily two data types mainly Atomic and Collective. Atomic data types are indivisible which represents only a single data value. Some examples are integer (int), floating point (float) and boolean (bool). Collective data types on the other hand are a collections of multiple data values which consists of string (str), list (list), tuple (tuple), set (set) and dictionary (dict). This article will focus on list, set and dictionary, and ways to convert between them without any inbuilt python commands.
