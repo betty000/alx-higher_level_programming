@@ -1,0 +1,78 @@
+`` 7-base_geometry`` module
+============================
+Using ``7-base_geometry``
+----------------------------
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Normal output: 
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("my_integer", 85566)
+
+Errors:
+    >>> bg.integer_validator("my_int", "heehee")
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", "")
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", 's')
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", float('nan'))
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_int must be greater than 0
+
+    >>> bg.integer_validator("my_int", -2)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_int must be greater than 0
+
+    >>> bg.integer_validator("my_int", 23.4)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", )
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes exactly 3 arguments (2 given)
+ 
+    >>> bg.integer_validator("my_int")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes exactly 3 arguments (2 given)
+   
+    >>> bg.integer_validator("my_int", 234, 4234, 423)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes exactly 3 arguments (5 given)
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes exactly 3 arguments (1 given)
