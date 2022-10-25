@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-"""
-This file contains a function that appends
-a string at the end of a text file and
-the number of characters returned
-"""
+"""my module"""
 
 
 def append_write(filename="", text=""):
-    with open(filename, mode="a", encoding="utf-8") as file:
-        return (file.write(str(text)))
+    """appends a text to a string file"""
+    with open(filename, "a", encoding="utf-8") as f:
+        return (f.write(text))
