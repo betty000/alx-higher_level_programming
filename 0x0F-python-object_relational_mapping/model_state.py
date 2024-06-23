@@ -1,16 +1,22 @@
 #!/usr/bin/python3
-"""Definition of the State class"""
+"""Create table `states` using SQLAlchemy"""
 
+from sqlalchemy import Column
+from sqlalchemy import Integer
+from sqlalchemy import String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
 
 
 class State(Base):
-    """Class State"""
+    """Class representing the `states` table.
 
+    Columns:
+        id (int): /NOT NULL/AUTO_INCREMENT/PRIMARY_KEY/
+        name (string): /VARCHAR(128)/NOT NULL/
+    """
     __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True,
-                primary_key=True, nullable=False, unique=True)
+
+    id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
